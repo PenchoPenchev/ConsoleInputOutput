@@ -15,8 +15,16 @@ namespace CalcWithAccuracy
 
             for (int i = 1; i <= n; i++)
             {
-                sum += 1.0 / i; // or sum += Math.Round(1.0 / i, 3); 
-                Console.WriteLine("{0:0.000}", sum);
+                if (i == 1 || i % 2 == 0)
+                {
+                    sum += Math.Round(1.0 / i, 3);
+                }
+                else
+                {
+                    sum -= Math.Round(1.0 / i, 3);
+                }
+                 
+                Console.WriteLine("The sum is {0:0.000}", sum);
             }
         }
     }
